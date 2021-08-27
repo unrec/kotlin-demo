@@ -11,8 +11,15 @@ var StringBuilder.lastChar: Char
         this.setCharAt(length - 1, value)
     }
 
+fun String.incrementLastDigit(): String =
+    this.substring(0, this.length - 1) + (Character.getNumericValue(this.lastChar()) + 1) % 10
+
+
 fun main() {
     val string = "Some string"
-    print("Last char for $string using extension function is '${string.lastChar()}'")
-    print("First char for $string using extension property is '${string.firstChar}'")
+    println("Last char for $string using extension function is '${string.lastChar()}'")
+    println("First char for $string using extension property is '${string.firstChar}'")
+
+    val number = "123"
+    println("$number with incremented last digit = ${number.incrementLastDigit()}")
 }
