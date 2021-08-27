@@ -1,5 +1,16 @@
 package com.unrec.demo
 
+import kotlin.math.log10
+
+fun isValidBin(value: Int?): Boolean {
+    return when (value?.let { (log10(value.toDouble()) + 1).toInt() }) {
+        null -> false
+        6 -> true
+        8 -> true
+        else -> false
+    }
+}
+
 fun main() {
     val number = 42
     when {
