@@ -1,6 +1,6 @@
 package com.unrec.demo
 
-val path = "C:/tools/jdk/jdk-11/bin/java.exe"
+const val path = "C:/tools/jdk/jdk-11/bin/java.exe"
 
 fun parsePath(path: String) {
     val regex = "^(.+)/(.+)\\.(.+)$".toRegex()
@@ -13,6 +13,15 @@ fun parsePath(path: String) {
     }
 }
 
+fun strLenSafe(s: String?): Int = s?.length ?: 0
+
+fun randomStringOf(length: Int): String {
+    val allowedChars = ('A'..'Z') + ('a'..'z') + ('0'..'9')
+    return (1..length)
+        .map { allowedChars.random() }
+        .joinToString("")
+}
+
 fun main() {
     println("Parsing with String functions:")
     println("Path to folder: ${path.substringBeforeLast("/")}")
@@ -21,4 +30,9 @@ fun main() {
 
     println("\nParsing with regex:")
     parsePath(path)
+
+    println("length")
+    println(strLenSafe(null))
+    println(strLenSafe("123"))
+    println(randomStringOf(10))
 }
