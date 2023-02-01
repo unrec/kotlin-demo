@@ -1,5 +1,5 @@
-group = "com.unrec.demo"
-version = "1.0-SNAPSHOT"
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 description = "kotlin-demo"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -8,14 +8,43 @@ object Versions {
 }
 
 plugins {
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.7.20" apply false
     java
 }
 
+allprojects {
+    group = "com.unrec.demo"
+    version = "1.0-SNAPSHOT"
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "11"
+        }
+    }
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
+}
+
+subprojects {
+    apply {
+        plugin("kotlin")
+    }
+
+    dependencies {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+        testImplementation("org.jetbrains.kotlin:kotlin-test")
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
-    implementation(group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version = Versions.KOTLIN)
-    testImplementation(group = "org.jetbrains.kotlin", name = "kotlin-test", version = Versions.KOTLIN)
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.0")
+    implementation("org.jetbrains.kotlin", "kotlin-stdlib-jdk8", Versions.KOTLIN)
+    testImplementation("org.jetbrains.kotlin", "kotlin-test", Versions.KOTLIN)
 }
 
 repositories {
