@@ -1,7 +1,7 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
-import com.unrec.koans.conventions.TimeInterval.WEEK
-import com.unrec.koans.conventions.TimeInterval.YEAR
+import com.unrec.demo.koans.conventions.TimeInterval.WEEK
+import com.unrec.demo.koans.conventions.TimeInterval.YEAR
 
 enum class TimeInterval { DAY, WEEK, YEAR }
 

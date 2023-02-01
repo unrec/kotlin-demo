@@ -1,4 +1,4 @@
-package com.unrec.koans.generics
+package com.unrec.demo.koans.generics
 
 fun <T, C : MutableCollection<T>> Collection<T>.partitionTo(
     col1: C,

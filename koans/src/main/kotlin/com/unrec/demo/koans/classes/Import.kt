@@ -1,4 +1,4 @@
-package com.unrec.koans.classes
+package com.unrec.demo.koans.classes
 
 import java.util.Random as JRandom
 import kotlin.random.Random as KRandom

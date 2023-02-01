@@ -1,4 +1,4 @@
-package com.unrec.koans.collections
+package com.unrec.demo.koans.collections
 
 fun doSomethingWithCollectionNewStyle(collection: Collection<String>): Collection<String>? {
     val groupsByLength = collection.groupBy { it.length }

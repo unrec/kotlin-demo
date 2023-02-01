@@ -1,4 +1,4 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
 fun checkInRange(date: MyDate, first: MyDate, last: MyDate): Boolean {
     // return date in first.rangeTo(last)

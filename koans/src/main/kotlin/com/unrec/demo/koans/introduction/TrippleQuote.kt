@@ -1,4 +1,4 @@
-package com.unrec.koans.introduction
+package com.unrec.demo.koans.introduction
 
 const val question = "life, the universe, and everything"
 const val answer = 42

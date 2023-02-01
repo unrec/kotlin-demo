@@ -1,4 +1,4 @@
-package com.unrec.koans.classes
+package com.unrec.demo.koans.classes
 
 data class Person(val name: String, val age: Int)
 

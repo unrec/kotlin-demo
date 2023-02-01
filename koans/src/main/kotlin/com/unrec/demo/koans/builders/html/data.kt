@@ -1,4 +1,4 @@
-package com.unrec.koans.builders.html
+package com.unrec.demo.koans.builders.html
 
 data class Product(val description: String, val price: Double, val popularity: Int)
 
@@ -35,4 +35,5 @@ fun getProducts() = listOf(
     cranberry,
     crocs,
     crocodile,
-    cushion)
+    cushion
+)

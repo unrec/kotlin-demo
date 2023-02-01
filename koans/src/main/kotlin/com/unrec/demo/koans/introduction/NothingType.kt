@@ -1,4 +1,4 @@
-package com.unrec.koans.introduction
+package com.unrec.demo.koans.introduction
 
 fun main() {
     checkAge(33)

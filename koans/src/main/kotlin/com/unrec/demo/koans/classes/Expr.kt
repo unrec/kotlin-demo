@@ -1,4 +1,4 @@
-package com.unrec.koans.classes
+package com.unrec.demo.koans.classes
 
 fun eval(expr: Expr): Int =
     when (expr) {

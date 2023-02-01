@@ -1,4 +1,4 @@
-package com.unrec.koans.collections
+package com.unrec.demo.koans.collections
 
 fun Shop.getSetOfCustomers(): Set<Customer> = customers.toSet()
 

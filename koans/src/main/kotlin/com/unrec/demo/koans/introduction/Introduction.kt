@@ -1,4 +1,4 @@
-package com.unrec.koans
+package com.unrec.demo.koans.introduction
 
 fun start(): String = "OK"
 

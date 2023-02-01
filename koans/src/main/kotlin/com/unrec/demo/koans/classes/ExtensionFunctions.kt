@@ -1,4 +1,4 @@
-package com.unrec.koans.classes
+package com.unrec.demo.koans.classes
 
 fun Int.r(): RationalNumber = RationalNumber(this, 1)
 

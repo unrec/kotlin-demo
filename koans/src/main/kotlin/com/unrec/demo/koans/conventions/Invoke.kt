@@ -1,4 +1,4 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
 class Invokable {
     var numberOfInvocations: Int = 0

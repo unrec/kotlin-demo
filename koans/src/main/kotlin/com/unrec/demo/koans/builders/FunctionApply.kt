@@ -1,4 +1,4 @@
-package com.unrec.koans.builders
+package com.unrec.demo.koans.builders
 
 fun <T> T.myApply(f: T.() -> Unit): T {
     return this.apply(f)

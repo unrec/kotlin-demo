@@ -1,4 +1,4 @@
-package com.unrec.koans.builders.html
+package com.unrec.demo.koans.builders.html
 
 open class Tag(val name: String) {
     val children: MutableList<Tag> = ArrayList()

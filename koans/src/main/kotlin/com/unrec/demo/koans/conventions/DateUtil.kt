@@ -1,4 +1,4 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
 import java.util.*
 

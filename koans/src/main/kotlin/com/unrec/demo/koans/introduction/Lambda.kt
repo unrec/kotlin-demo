@@ -1,4 +1,4 @@
-package com.unrec.koans.introduction
+package com.unrec.demo.koans.introduction
 
 val oddNumbers = (1..17 step 2).toList()
 val withEven = listOf(*oddNumbers.toTypedArray(), 2)

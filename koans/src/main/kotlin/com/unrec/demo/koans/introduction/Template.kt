@@ -1,4 +1,4 @@
-package com.unrec.koans.introduction
+package com.unrec.demo.koans.introduction
 
 const val month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)"
 

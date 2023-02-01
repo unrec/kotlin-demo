@@ -1,4 +1,4 @@
-package com.unrec.koans.builders
+package com.unrec.demo.koans.builders
 
 fun buildString(build: StringBuilder.() -> Unit): String {
     val stringBuilder = StringBuilder()

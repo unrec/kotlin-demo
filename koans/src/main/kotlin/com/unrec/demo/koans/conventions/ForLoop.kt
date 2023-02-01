@@ -1,4 +1,4 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
 class DateRange(val start: MyDate, val end: MyDate) : Iterable<MyDate> {
     override operator fun iterator(): Iterator<MyDate> {

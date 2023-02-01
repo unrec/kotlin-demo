@@ -1,4 +1,4 @@
-package com.unrec.koans.conventions
+package com.unrec.demo.koans.conventions
 
 data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparable<MyDate> {
     override operator fun compareTo(other: MyDate): Int {

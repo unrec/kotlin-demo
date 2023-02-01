@@ -1,4 +1,4 @@
-package com.unrec.koans.builders
+package com.unrec.demo.koans.builders
 
 fun task(): List<Boolean> {
     val isEven: Int.() -> Boolean = { this % 2 == 0 }

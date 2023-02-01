@@ -1,4 +1,4 @@
-package com.unrec.koans.collections
+package com.unrec.demo.koans.collections
 
 data class Shop(val name: String, val customers: List<Customer>)
 
