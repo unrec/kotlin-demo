@@ -1,7 +1,5 @@
 package com.unrec.koans.introduction
 
-import java.lang.IllegalArgumentException
-
 fun main() {
     checkAge(33)
     checkAge(9000)

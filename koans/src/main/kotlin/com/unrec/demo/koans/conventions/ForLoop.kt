@@ -1,7 +1,5 @@
 package com.unrec.koans.conventions
 
-import java.util.*
-
 class DateRange(val start: MyDate, val end: MyDate) : Iterable<MyDate> {
     override operator fun iterator(): Iterator<MyDate> {
         return object : Iterator<MyDate> {
