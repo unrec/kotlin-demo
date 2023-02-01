@@ -1,4 +1,4 @@
-package com.unrec.algorithms
+package com.unrec.demo.algorithms
 
 fun luhn1(number: String): Boolean {
     if (number.length != 16) return false
@@ -17,7 +17,6 @@ fun luhn1(number: String): Boolean {
             if (index % 2 == 0 && value < 9) value * 2 % 9 else value
         }
         .sum()
-    println(checksum)
     return checksum % 10 == 0
 }
 
@@ -31,7 +30,6 @@ fun luhn2(number: String): Boolean {
         val n: Int = (number[i] - '0') * 2
         checksum += if (n > 9) n - 9 else n
     }
-    println(checksum)
     return checksum % 10 == 0
 }
 
@@ -51,13 +49,5 @@ fun luhn3(number: String): Boolean {
             if (index % 2 == 1 && value < 9) value * 2 % 9 else value
         }
         .sum()
-    println(checksum)
     return checksum % 10 == 0
-}
-
-fun main() {
-    val number = "1234560910235463"
-    println(luhn1(number))
-    println(luhn2(number))
-    println(luhn3(number))
 }
