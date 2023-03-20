@@ -47,9 +47,20 @@ val tracks = listOf(
     Track("Beatles", "Yesterday", LocalDateTime.of(2008, 6, 25, 13, 43, 0)),
     Track("U2", "One", LocalDateTime.of(2008, 6, 25, 13, 45, 0)),
     Track("U2", "One", LocalDateTime.of(2008, 6, 25, 13, 45, 0)),
+    Track("Queen", "Show Must Go On", LocalDateTime.of(2008, 6, 25, 15, 0, 0)),
+    Track("Queen", "Show Must Go On", LocalDateTime.of(2008, 6, 25, 15, 5, 0)),
+    Track("Queen", "Show Must Go On", LocalDateTime.of(2008, 6, 25, 15, 5, 0)),
+    Track("Queen", "Show Must Go On", LocalDateTime.of(2008, 6, 25, 15, 10, 0)),
+    Track("Queen", "Radio Gaga", LocalDateTime.of(2008, 6, 25, 15, 15, 0)),
+    Track("Queen", "Show Must Go On", LocalDateTime.of(2008, 6, 25, 15, 20, 0)),
 )
 
 fun main() {
+
+    val duplicates = tracks.leaveDuplicates()
+    println("duplicates = $duplicates")
+    println("duplicates.size = ${duplicates.size}")
+
     val filteredWithZip = tracks.zipWithNext()
         .filter { it.first != it.second }
         .map { it.first } + tracks.last()
@@ -71,4 +82,8 @@ fun <T : Any> Iterable<T>.removeAdjacentDuplicates(): List<T> {
             it
         }
     }
+}
+
+fun <T : Any> List<T>.leaveDuplicates(): List<T> {
+    return this.zipWithNext().filter { it.first == it.second }.map { it.second }
 }
