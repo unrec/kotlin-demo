@@ -5,6 +5,7 @@ Composite lets clients treat individual objects and compositions of objects unif
 
 package com.unrec.demo.patterns.structural
 
+import com.unrec.demo.patterns.behavioral.ItemIterator
 import com.unrec.demo.patterns.structural.Product.ApplePhone
 import com.unrec.demo.patterns.structural.Product.Box
 import com.unrec.demo.patterns.structural.Product.Display
@@ -32,13 +33,14 @@ fun main() {
 }
 
 interface Item {
+    val model: String
 
     fun getPrice(): Int
 }
 
 sealed class Product : Item {
 
-    class ApplePhone(private val model: String) : Product() {
+    class ApplePhone(override val model: String) : Product() {
         override fun getPrice(): Int {
             return when (model) {
                 "XS" -> 500
@@ -49,7 +51,7 @@ sealed class Product : Item {
         }
     }
 
-    class Display(private val model: String) : Product() {
+    class Display(override val model: String) : Product() {
 
         var driverVersion: String = "1.0.0"
 
@@ -64,6 +66,11 @@ sealed class Product : Item {
     }
 
     class Box(private val items: List<Item>) : Product() {
+
         override fun getPrice() = items.sumOf(Item::getPrice)
+
+        override val model: String = "Just a Box"
+
+        operator fun iterator(): Iterator<Item> = ItemIterator(items)
     }
 }
