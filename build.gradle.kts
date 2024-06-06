@@ -1,14 +1,15 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 description = "kotlin-demo"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 object Versions {
-    const val KOTLIN = "1.7.20"
+    const val KOTLIN = "2.0.0"
 }
 
 plugins {
-    kotlin("jvm") version "1.7.20" apply false
+    kotlin("jvm") version "2.0.0" apply false
     java
 }
 
@@ -17,9 +18,9 @@ allprojects {
     version = "1.0-SNAPSHOT"
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "11"
+        compilerOptions {
+            freeCompilerArgs.add("-Xjsr305=strict")
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
     tasks.withType<Test> {
